@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <title>Vibe Tech - 訂購</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Vibe Tech 智能小鋪</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="products.html">產品</a></li>
+            <li><a href="cart.html">立即訂購</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+    </nav>
+
+    <section class="calculator-section" style="padding-top: 50px;">
+        <div class="calculator-card">
+            <h3>計算訂單總額</h3>
+            <div class="form-group">
+                <label for="productSelect">選擇貨物：</label>
+                <select id="productSelect" onchange="updatePriceDisplay()">
+                    <option value="1200">Vibe Watch Pro (HKS 1200)</option>
+                    <option value="800">AI 降噪耳機 (HKS 800)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantityInput">選擇數量：</label>
+                <input type="number" id="quantityInput" value="1" min="1">
+            </div>
+            <div class="form-group">
+                <label>單價：</label>
+                <span class="price-text" id="unitPriceDisplay">HKS 1200</span>
+            </div>
+            <button class="btn-calculate" onclick="calculateTotal()">計算總額</button>
+            <div class="result-text" id="resultDisplay"></div>
+        </div>
+    </section>
+    
+    <!-- 記得要連結 JS -->
+ <script>
+    // 當購物車頁面載入時，檢查有沒有剛加入的產品
+    window.onload = function() {
+        let savedPrice = localStorage.getItem("selectedPrice");
+        if (savedPrice) {
+            document.getElementById("productSelect").value = savedPrice;
+            updatePriceDisplay(); // 呼叫原有更新單價的函數
+            localStorage.removeItem("selectedPrice"); // 清除記錄
+        }
+    };
+</script> 
+    <script src="script.js"></script>
+</body>
+</html>

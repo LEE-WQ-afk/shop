@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Tech | 未來科技配件</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Google Fonts 令字體更靚 -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 頂部導覽列 -->
+    <nav class="navbar">
+        <div class="logo">VIBE<span>TECH</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">首頁</a></li>
+            <li><a href="products.html">產品規格</a></li>
+            <li><a href="cart.html" class="btn-nav">立即選購</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+    </nav>
+
+    <!-- 震撼的首頁 Banner -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>未來生活，<br>由 <span class="highlight">Vibe</span> 開始。</h1>
+            <p>利用 AI 驅動的智能配件，讓你的每一天充滿科技感與無限可能。</p>
+            <a href="cart.html" class="btn-primary">探索最新產品</a>
+        </div>
+    </header>
+
+    <!-- 熱門產品展示區 -->
+    <section class="product-section">
+        <h2 class="section-title">熱門智能配件</h2>
+        <div class="product-grid">
+            
+            <!-- 產品卡片 1 -->
+            <div class="product-card">
+                <div class="badge">HOT</div>
+                <div class="product-image watch-img">⌚</div>
+                <div class="product-info">
+                    <h3>Vibe Watch Pro</h3>
+                    <p class="desc">心率監測 | 訊息通知 | 50米防水</p>
+                    <p class="price">HKS 1,200</p>
+                    <button class="btn-add" onclick="addToCart(1200)">加入購物車</button>
+                </div>
+            </div>
+
+            <!-- 產品卡片 2 -->
+            <div class="product-card">
+                <div class="product-image headphone-img">🎧</div>
+                <div class="product-info">
+                    <h3>AI 降噪耳機</h3>
+                    <p class="desc">主動降噪 | 語音助理 | 40小時續航</p>
+                    <p class="price">HKS 800</p>
+                    <button class="btn-add" onclick="addToCart(800)">加入購物車</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 彈出提示框 (Notification) -->
+    <div id="toast" class="toast">已加入購物車！</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
